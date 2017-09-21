@@ -1,0 +1,18 @@
+<!-- blog/templates/index.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Blog!</title>
+    </head>
+    <body>
+        <h1>Blog Sample Application!!</h1>
+		
+		{% for article in ArticleList %}
+			<li><a href="#">{{ article.title }}</a></li>
+		{% endfor %}
+		
+		
+		<a href="/about">About Me</a>
+    </body>
+</html>

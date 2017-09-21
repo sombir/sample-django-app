@@ -1,0 +1,39 @@
+{% include "header.html" %}
+	<div class="jumbotron">
+	  <div class="container">
+		<h1 class="display-3">Welcome to Django!</h1>
+		<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+	  </div>
+	</div>
+	<div class="container">
+	  <!-- Example row of columns -->
+	  <div class="row">
+		<div class="col-md-8">
+		  {% for article in ArticleList %}
+		  <h3>{{ article.title }}</h3>
+		  <h5><strong>{{ article.created_at | date:"M d, Y" }}</strong></h5>
+		  {{ article.summary | safe }}
+		  <p><a class="btn btn-secondary" href="/article/{{ article.id }}" role="button">View details &raquo;</a></p>
+		  {% endfor %}
+		</div>
+		<div class="col-md-4">
+		  <h2>{{ AboutContent.title }}</h2>
+		  {{ AboutContent.summary | safe }}
+		  <p><a class="btn btn-secondary" href="/about" role="button">View details &raquo;</a></p>
+		  <h2>{{ ServicesContent.title }}</h2>
+		 {{ ServicesContent.summary | safe }}
+		  <p><a class="btn btn-secondary" href="/services" role="button">View details &raquo;</a></p>
+		  {% for article in ArticleList %}
+		  <h3><a class="btn btn-secondary" href="/article/{{ article.id }}" role="button">{{ article.title }}</a></h3>
+		  {% endfor %}
+	   </div>
+		
+	  </div>
+	</div> <!-- /container -->
+{% include "footer.html" %}
+	
+	
+
+
+
+	

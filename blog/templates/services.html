@@ -1,0 +1,12 @@
+{% include "header.html" %}
+<div class="container">
+	<div class="jumbotron1">
+		<h1>{{ PageContent.title }}</h1>
+		<div id="body">
+			<div>
+				{{ PageContent.description | safe }}
+			</div>
+		</div>
+	</div>
+</div>
+{% include "footer.html" %}
